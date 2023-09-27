@@ -1,0 +1,105 @@
+.ExperienceContainer {
+  display: flex;
+  padding: 0 15%;
+  height: 100%;
+  align-items: center;
+  gap: 15%;
+
+  .textContainer {
+    color: #fff;
+    flex: 1 1 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+
+    .title {
+      font-size: 4rem;
+    }
+
+    .timeLineContainer {
+      height: 70%;
+      position: relative;
+      .timeLine {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        &::before {
+          position: absolute;
+
+          width: 2px;
+          height: 100%;
+          margin-left: -1px;
+          content: "";
+          background: rgba(255, 255, 255, 0.07);
+        }
+      }
+      .timeItem {
+        padding: 2% 0;
+        opacity: 0.6;
+
+        transition: 0.5s;
+        box-sizing: border-box;
+
+        display: flex;
+        position: relative;
+
+        &:last-child {
+          opacity: 0.9;
+        }
+
+        &:hover {
+          opacity: 1;
+          transform: translateX(-80px);
+        }
+
+        &::before {
+          content: attr(data-text);
+          letter-spacing: 3px;
+          width: 100%;
+          position: absolute;
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 13px;
+          border-left: 2px solid rgba(255, 255, 255, 0.5);
+          margin-top: -5px;
+          padding-left: 15px;
+          opacity: 1;
+          left: 0;
+          color: #fff;
+        }
+        .timeContent {
+          left: 20px;
+
+          margin-top: 3%;
+          margin-left: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          .timeTitle {
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 1rem;
+          }
+          .timeSubTitle {
+            letter-spacing: 1.5px;
+            line-height: 1.5;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+
+  .imageContainer {
+    flex: 1;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: -40vh;
+      left: -15vh;
+      width: 35vw;
+    }
+  }
+}

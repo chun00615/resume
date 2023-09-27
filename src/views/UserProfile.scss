@@ -1,0 +1,235 @@
+.mousewheel-slider .swiper-pagination-bullets {
+  right: 32% !important;
+}
+
+.swiper-slide {
+  width: 100vw;
+}
+
+@-webkit-keyframes movingTab {
+  0% {
+    transform: translateX(0%);
+  }
+
+  50% {
+    transform: translateX(-10%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes movingTab {
+  0% {
+    transform: translateX(0%);
+  }
+
+  50% {
+    transform: translateX(-10%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+$color-blue: #753c94;
+$color-body-text: #636363;
+$color-white: #ffffff;
+
+@-webkit-keyframes movingTab {
+  0% {
+    transform: translateX(0%);
+  }
+
+  50% {
+    transform: translateX(-10%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes movingTab {
+  0% {
+    transform: translateX(0%);
+  }
+
+  50% {
+    transform: translateX(-10%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  margin: 50px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.profile {
+  background-color: rgb(39, 39, 39);
+
+  width: 100%;
+  height: 100%;
+}
+
+.tabs {
+  background-color: rgb(39, 39, 39);
+  display: flex;
+  margin-right: 30px;
+  justify-content: flex-end;
+  padding: 35px 10px;
+  height: 10vh;
+
+  .tabs--list {
+    display: flex;
+    position: relative;
+    border-radius: 8px;
+    gap: 5vw;
+
+    li {
+      display: inline-block;
+      vertical-align: middle;
+      width: 25%;
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+      align-items: center;
+
+      a {
+        display: block;
+        padding: 15px 0 19px;
+        font-size: 18px;
+        line-height: 26px;
+        color: $color-body-text;
+        transition: color ease 0.7s, box-shadow 0.5s;
+        text-align: center;
+
+        &.actived {
+          color: $color-white;
+
+          &:hover {
+            box-shadow: none;
+          }
+        }
+
+        &:hover {
+          color: #fff;
+        }
+      }
+
+      &.moving-tab {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: -5%;
+
+        top: 70%;
+
+        background: url("../assets/image/ping-material.png");
+        opacity: 0.5;
+        transition: left 0.7s, box-shadow 0.5s;
+        z-index: 1;
+        border-radius: 8px;
+        height: 15px;
+
+        &--interaction {
+          animation: movingTab 0.4s forwards;
+          transition: left 0.4s cubic-bezier(0.29, 1.42, 0.79, 1);
+        }
+      }
+    }
+  }
+}
+
+.container {
+  height: 80vh;
+
+  .profileSwiper {
+    height: 100%;
+
+    .swiper-button-prev {
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%234c71ae'%2F%3E%3C%2Fsvg%3E") !important;
+    }
+
+    .swiper-button-next {
+      background-image: none;
+    }
+
+    .parallax-bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 130%;
+      height: 100%;
+      -webkit-background-size: cover;
+      background-size: cover;
+      background-position: center;
+      background-color: rgb(39, 39, 39);
+    }
+  }
+
+  .slider-custom-buttons {
+    --swiper-navigation-sides-offset: 30px;
+    --swiper-navigation-size: 44px;
+
+    .swiper-custom-button-prev,
+    .swiper-custom-button-next {
+      transition: all 0.3s ease-out;
+      box-shadow: none;
+
+      padding: 0;
+      position: absolute;
+
+      border: 1px solid #fff;
+      border-radius: 50px;
+      top: var(--swiper-navigation-top-offset, 50%);
+      width: calc(var(--swiper-navigation-size) / 44 * 45);
+      height: var(--swiper-navigation-size);
+      margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+      z-index: 10;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(39, 39, 39);
+
+      &:hover {
+        background-color: #fff;
+        background-position: left bottom;
+
+        span {
+          color: #636363;
+        }
+      }
+
+      & span {
+        color: #fff;
+      }
+    }
+
+    .swiper-custom-button-prev {
+      left: var(--swiper-navigation-sides-offset, 50px);
+      right: auto;
+    }
+
+    .swiper-custom-button-next {
+      right: var(--swiper-navigation-sides-offset, 50px);
+      left: auto;
+    }
+  }
+}
